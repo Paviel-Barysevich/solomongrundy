@@ -20,6 +20,23 @@ body {
     margin: 0 auto;
 }
 
+.radiobutton {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+label {
+    color: var(--text-color-lighttheme);
+}
+
+#light {
+    margin-right: 50px;
+}
+
+input:checked + label {
+    text-shadow: 0 0 1px var(--text-color-lighttheme);
+}
+
 .container > h1,
 .container > p {
     text-align: center;
