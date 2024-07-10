@@ -2,6 +2,9 @@
 --head-color-lighttheme: #140f0f;
 --text-color-lighttheme: #090808;
 --wrapper-color-lighttheme: #eeeaea;
+--head-color-darktheme: #e1d6d6;
+--text-color-darktheme: #fef9f9;
+--wrapper-color-darktheme: #1b1818;
 --font-size: 16px;
 }
 
@@ -67,4 +70,25 @@ input:checked + label {
     .wrapper {
         height: 100vh;
     }
+}
+
+/*Add dark mode*/
+.wrapper.dark {
+    background: var(--wrapper-color-darktheme);
+}
+
+label.dark {
+    color: var(--text-color-darktheme);
+}
+
+input.dark:checked + label {
+    text-shadow: 0 0 1px var(--text-color-darktheme);
+}
+
+.container.dark > h1 {
+    color: var(--head-color-darktheme);
+}
+
+.container.dark > p {
+    color: var(--text-color-darktheme);
 }
