@@ -29,6 +29,7 @@ body {
     box-sizing: border-box;
     background: var(--wrapper-color-lighttheme);
     padding: 10px 10px;
+    transition: 1s;
 }
 
 .container {
@@ -50,7 +51,7 @@ label {
     height: var(--label-height);
     border: var(--label-border-width) solid var(--label-border-color-lighttheme);
     border-radius: 50px;
-    transition: 0.5s;
+    transition: 0.9s;
 }
 
 label:hover {
@@ -68,10 +69,10 @@ label::after {
     height: calc(var(--label-height) - 2 * var(--label-border-width));
     border-radius: 50%;
     box-shadow: var(--label-after-shadow-lighttheme);
-    transition: 0.5s;
+    transition: 0.9s;
 }
 
-#light {
+#checkbox {
     position: relative;
     left: -9999px;
 }
@@ -94,6 +95,7 @@ input:checked + label::after {
 .container > h1,
 .container > p {
     text-align: center;
+    transition: 1s;
 }
 
 .container > h1 {
@@ -126,14 +128,6 @@ input:checked + label::after {
 /*Add dark mode*/
 .wrapper.dark {
     background: var(--wrapper-color-darktheme);
-}
-
-label.dark {
-    color: var(--text-color-darktheme);
-}
-
-input.dark:checked + label {
-    text-shadow: 0 0 1px var(--text-color-darktheme);
 }
 
 .container.dark > h1 {
