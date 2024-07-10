@@ -1,0 +1,94 @@
+:root {
+--head-color-lighttheme: #140f0f;
+--text-color-lighttheme: #090808;
+--wrapper-color-lighttheme: #eeeaea;
+--head-color-darktheme: #e1d6d6;
+--text-color-darktheme: #fef9f9;
+--wrapper-color-darktheme: #1b1818;
+--font-size: 16px;
+}
+
+body {
+    margin: 0;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    background: var(--wrapper-color-lighttheme);
+    padding: 10px 10px;
+}
+
+.container {
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.radiobutton {
+    display: inline-flex;
+    flex-direction: row-reverse;
+}
+
+label {
+    color: var(--text-color-lighttheme);
+}
+
+#light {
+    margin-right: 50px;
+}
+
+input:checked + label {
+    text-shadow: 0 0 1px var(--text-color-lighttheme);
+}
+
+.container > h1,
+.container > p {
+    text-align: center;
+}
+
+.container > h1 {
+    font-size: calc(var(--font-size) * 1.5);
+    color: var(--head-color-lighttheme);
+}
+
+.container[lang="be"] > h1::before {
+    content: "***";
+    display: block;
+    font-size: var(--font-size);
+    font-weight: 100;
+}
+
+.container > p {
+    font-size: calc(var(--font-size) * 1.125);
+    color: var(--text-color-lighttheme);
+}
+
+.container > p:last-child {
+    margin-bottom: 40px;
+}
+
+@media all and (min-width: 1800px) {
+    .wrapper {
+        height: 100vh;
+    }
+}
+
+/*Add dark mode*/
+.wrapper.dark {
+    background: var(--wrapper-color-darktheme);
+}
+
+label.dark {
+    color: var(--text-color-darktheme);
+}
+
+input.dark:checked + label {
+    text-shadow: 0 0 1px var(--text-color-darktheme);
+}
+
+.container.dark > h1 {
+    color: var(--head-color-darktheme);
+}
+
+.container.dark > p {
+    color: var(--text-color-darktheme);
+}
