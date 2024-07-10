@@ -15,7 +15,7 @@ body {
 .wrapper {
     box-sizing: border-box;
     background: var(--wrapper-color-lighttheme);
-    padding: 10px 0;
+    padding: 10px 10px;
 }
 
 .container {
