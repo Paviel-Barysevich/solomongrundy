@@ -6,6 +6,19 @@
 --text-color-darktheme: #fef9f9;
 --wrapper-color-darktheme: #1b1818;
 --font-size: 16px;
+--label-bg-color-lighttheme: transparent;
+--label-bg-color-darktheme: #373041;
+--label-width: 100px;
+--label-height: 50px;
+--label-border-width: 2px;
+--label-border-color-lighttheme: #212121;
+--label-border-color-darktheme: #dbf7f4;
+--label-shadow-lighttheme: 0 0 1px 1px #212121;
+--label-shadow-darktheme: 0 0 1px 1px #dbf7f4;
+--label-after-color-lighttheme: #fcfc08;
+--label-after-color-darktheme: #f3f3f3;
+--label-after-shadow-lighttheme: 0 0 1px 1px #fcfc08;
+--label-after-shadow-darktheme:  0 0 1px 1px #f3f3f3;
 }
 
 body {
@@ -23,21 +36,59 @@ body {
     margin: 0 auto;
 }
 
-.radiobutton {
-    display: inline-flex;
-    flex-direction: row-reverse;
+.checkbox {
+    display: flex;
+    justify-content: flex-end;
 }
 
 label {
-    color: var(--text-color-lighttheme);
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    background: var(--label-bg-color-lighttheme);
+    width: var(--label-width);
+    height: var(--label-height);
+    border: var(--label-border-width) solid var(--label-border-color-lighttheme);
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+label:hover {
+    box-shadow: var(--label-shadow-lighttheme);
+    cursor: pointer;
+}
+
+label::after {
+    position: absolute;
+    top: 0.1px;
+    content: "";
+    display: block;
+    background: var(--label-after-color-lighttheme);
+    width: calc(var(--label-width) / 2 - 2 * var(--label-border-width));
+    height: calc(var(--label-height) - 2 * var(--label-border-width));
+    border-radius: 50%;
+    box-shadow: var(--label-after-shadow-lighttheme);
+    transition: 0.5s;
 }
 
 #light {
-    margin-right: 50px;
+    position: relative;
+    left: -9999px;
 }
 
 input:checked + label {
-    text-shadow: 0 0 1px var(--text-color-lighttheme);
+    background: var(--label-bg-color-darktheme);
+    border: var(--label-border-width) solid var(--label-border-color-darktheme);
+}
+
+input:checked + label:hover {
+    box-shadow: var(--label-shadow-darktheme);
+}
+
+input:checked + label::after {
+    background: var(--label-after-color-darktheme);
+    box-shadow: var(--label-after-shadow-darktheme);
+    transform: translateX(calc(100% + 4.2px));
 }
 
 .container > h1,
