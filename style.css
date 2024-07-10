@@ -1,10 +1,10 @@
 :root {
 --head-color-lighttheme: #140f0f;
 --text-color-lighttheme: #090808;
---wrapper-color-lighttheme: #eeeaea;
+--body-color-lighttheme: #eeeaea;
 --head-color-darktheme: #e1d6d6;
 --text-color-darktheme: #fef9f9;
---wrapper-color-darktheme: #1b1818;
+--body-color-darktheme: #1b1818;
 --font-size: 16px;
 --label-bg-color-lighttheme: transparent;
 --label-bg-color-darktheme: #373041;
@@ -22,14 +22,14 @@
 }
 
 body {
+    background: var(--body-color-lighttheme);
     margin: 0;
+    transition: 1s;
 }
 
 .wrapper {
     box-sizing: border-box;
-    background: var(--wrapper-color-lighttheme);
     padding: 10px 10px;
-    transition: 1s;
 }
 
 .container {
@@ -126,8 +126,8 @@ input:checked + label::after {
 }
 
 /*Add dark mode*/
-.wrapper.dark {
-    background: var(--wrapper-color-darktheme);
+body.dark {
+    background: var(--body-color-darktheme);
 }
 
 .container.dark > h1 {
