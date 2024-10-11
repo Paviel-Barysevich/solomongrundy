@@ -17,8 +17,8 @@
 --label-shadow-darktheme: 0 0 1px 1px #dbf7f4;
 --label-after-color-lighttheme: #fcfc08;
 --label-after-color-darktheme: #f3f3f3;
---label-after-shadow-lighttheme: 0 0 1px 1px #fcfc08;
---label-after-shadow-darktheme:  0 0 1px 1px #f3f3f3;
+--label-after-shadow-lighttheme: 0 0 2px 2px #fcfc08;
+--label-after-shadow-darktheme:  0 0 2px 2px #f3f3f3;
 }
 
 body {
@@ -52,6 +52,7 @@ label {
     border: var(--label-border-width) solid var(--label-border-color-lighttheme);
     border-radius: 50px;
     transition: 0.9s;
+    overflow: hidden;
 }
 
 label:hover {
@@ -61,7 +62,7 @@ label:hover {
 
 label::after {
     position: absolute;
-    top: 0.1px;
+    top: 0.5px;
     content: "";
     display: block;
     background: var(--label-after-color-lighttheme);
